@@ -1,9 +1,66 @@
 import streamlit as st
+from datetime import datetime
+import streamlit.components.v1 as components
+import base64
 
 st.set_page_config(layout="wide")
 
+#Configuração da página de fundo
+def get_base64(file_path):
+    with open(file_path, "rb") as f:
+        return base64.b64encode(f.read()).decode()
+
+img_base64 = get_base64("img/brasao.png")
+
+st.markdown(
+    f"""
+    <style>
+    .stApp {{
+        background-image: url("data:image/png;base64,{img_base64}");
+        background-size: 120px;
+        background-repeat: no-repeat;
+        background-position: 300px 60px;
+        background-attachment: fixed;
+    }}
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+
+#Configuração do relógio e da data
+
+agora = datetime.now()
+
+components.html(
+    f"""
+    <div style="
+        position: fixed;
+        top: 10px;
+        right: 20px;
+        text-align: right;
+        font-size: 16px;
+        font-weight: 600;
+        z-index: 9999;
+        background-color: rgba(255,255,255,0.9);
+        padding: 6px 10px;
+        border-radius: 8px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    ">
+        📅 {agora.strftime('%d/%m/%Y')}<br>
+        ⏰ {agora.strftime('%H:%M:%S')}
+    </div>
+    """,
+    height=80,
+)
+
+
+
 def home():
-    st.write("Bem-vindo à página inicial!")
+ st.write("Página INICIAL")  
+
+
+
 
 def despesas_fixas():
     container1 = st.container()
