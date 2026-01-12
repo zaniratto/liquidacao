@@ -24,15 +24,15 @@ def despesas_fixas():
 
         with col1:
             st.header("Luz")
-            st.markdown("[CEMIG CT 07](https://docs.google.com/spreadsheets/d/e/2PACX-1vRpn1bwgV0dnJAyIObfDJu1yhhE7wrO8aEilh52AgoHnNxVwxieXOMie4jymnp_Wb2BRSd1ItWwr3RO/pubhtml)")
-            st.markdown("[CEMIG CT 08](https://docs.google.com/spreadsheets/d/e/2PACX-1vS-8WYu1SSipiWpyTKn2zJ_SOdK0mPkRHzAguLpsdOVd3isMNqyKtT5anX1pdW0E8qP1GYiS7xd6XVk/pubhtml)")
-            st.markdown("[CEMIG CT 09](https://docs.google.com/spreadsheets/d/e/2PACX-1vSk00O7EcyfrP1iJIiXeISAzFQubdL4LjZTXG0gs07WukIlPlSiHKqSqI0ATxn2gRRDC-WMzKp1bFYL/pubhtml)")
-            st.markdown("[CEMIG CT 10](https://docs.google.com/spreadsheets/d/e/2PACX-1vSXq_iEYGnPB2JOPnriD3rO1Fp9NwctJ9YCR2Lr6_FKV-uglycKHm7rI0nZFme13H1DHdUXEoNUXPsF/pubhtml)")
-            st.markdown("[CEMIG CT 11](https://docs.google.com/spreadsheets/d/e/2PACX-1vS77aXbpPpsaZGzXCtYAdmFQbzfhTldamxl3Fy279NMAPzVLzPIEviH3qLm-WIvFzhlwFUP3sEZhPNf/pubhtml)")
-            st.markdown("[CEMIG CT 24](https://docs.google.com/spreadsheets/d/e/2PACX-1vQyxfS9AlMqCH1tGyLEr380MiA5CzzHmZVo9WjpkYG25Lx0HVlIK9sJmmL5qS6ke36u5gOwwGstDlSM/pubhtml)")
-            st.markdown("[CEMIG CT 25](https://docs.google.com/spreadsheets/d/e/2PACX-1vRfHZdoHNWb7fQnagTbLBmUyTanWfchYogI0U9O6QuUzL9V6yRlcAj4Nglvjo-XeXJZ8tW6II2dRY0y/pubhtml)")
-            st.markdown("[CEMIG CT 28](https://docs.google.com/spreadsheets/d/e/2PACX-1vQ39GI9fKahU6zRvLAX66OG7BlG7uI8rKr_gjCbPZp4KoHsayfRL9KO5OF-KrTOHNrasHfydIVlFZ_S/pubhtml)")
-            st.markdown("[CEMIG CT 72](https://docs.google.com/spreadsheets/d/e/2PACX-1vQMUBglA93B_S2UETL5n1q7wGT19t6ZtJ-KluXudCOonKKBzsw6UO20mOzWOOnOk7uLgY09qhfMMCwT/pubhtml)")
+            st.markdown("[CEMIG CT 07](https://docs.google.com/spreadsheets/d/1j8Th4LU8hGf3zhOsD7LQOb1ZRPqiV-pq_77Zne3aJg4/edit?gid=1679924932#gid=1679924932)")
+            st.markdown("[CEMIG CT 08](https://docs.google.com/spreadsheets/d/1JH1OxEp3T8Iyb4YNGsfJ_EZ9D1Fd5QsLNO1Dt4R2HXs/edit?gid=1679924932#gid=1679924932)")
+            st.markdown("[CEMIG CT 09](https://docs.google.com/spreadsheets/d/1y9lA70R-aVHW4yiQoMiSlND1jTVF0Bk2I8veRuRsVoA/edit?gid=1679924932#gid=1679924932)")
+            st.markdown("[CEMIG CT 10](https://docs.google.com/spreadsheets/d/1WCyBOnzs532MNCnIOEfFifMR-yFb0JAdXB9hNabXFQs/edit?gid=1679924932#gid=1679924932)")
+            st.markdown("[CEMIG CT 11](https://docs.google.com/spreadsheets/d/1hh6GUnJdYpjzsDVkNrZs-_HKjsBPFTK5ODC_mwZjoAA/edit?gid=1679924932#gid=1679924932)")
+            st.markdown("[CEMIG CT 24](https://docs.google.com/spreadsheets/d/1rAMzJJkJWZdF_9iBjtcDQho3yNKiAGb1AeFCTY0eHSE/edit?gid=1679924932#gid=1679924932)")
+            st.markdown("[CEMIG CT 25](https://docs.google.com/spreadsheets/d/1r5oSM5oVd7j7lFu916P1Ux_N4O60DFJDxPHtyGbeBgo/edit?gid=1679924932#gid=1679924932)")
+            st.markdown("[CEMIG CT 28](https://docs.google.com/spreadsheets/d/1TzUOIu0z2NxxXjnxtMeg_6wgsgSZpEhdaTMs9otFteU/edit?gid=1679924932#gid=1679924932)")
+            st.markdown("[CEMIG CT 72](https://docs.google.com/spreadsheets/d/15xK_kv48jO0RkcMpHBEhbZ_OW4pOtxfwEfmDuODcOSM/edit?gid=0#gid=0)")
 
         with col2:
             st.header("Água")
