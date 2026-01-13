@@ -102,6 +102,27 @@ def bolsas():
 
 def auxilio_financeiro():
     st.write("Página Auxílio Financeiro")
+    container1 = st.container()
+    container2 = st.container()
+
+    with container1:
+        st.markdown(
+            """
+            <h2 style="text-align: center;">
+                Despesas Fixas
+            </h2>
+            """,
+            unsafe_allow_html=True
+        )
+
+    with container2:
+        col1, col2, col3 = st.columns(3)
+
+        with col1:
+            st.header("Auxílio Financeiro")
+            st.markdown("[Auxílio Financeiro 2025](https://docs.google.com/spreadsheets/d/e/2PACX-1vSLJrNeDahzsUzpNptNeMRZk_gd_6xjWSgn4rnMZKJjcXpNM7V_P7b4h_v9VXh0-g/pubhtml)")
+
+
 
 def terceirizada():
     st.write("Página Terceirizada")
