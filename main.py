@@ -2,6 +2,7 @@ import streamlit as st
 from datetime import datetime
 import streamlit.components.v1 as components
 import base64
+import openpyxl as op
 
 st.set_page_config(layout="wide")
 
@@ -99,7 +100,29 @@ def despesas_fixas():
 
 def bolsas():
     st.write("Página Bolsas")
+    container1 = st.container()
+    container2 = st.container()
 
+    with container1:
+        st.markdown(
+            """
+            <h2 style="text-align: center;">
+                BOLSAS
+            </h2>
+            """,
+            unsafe_allow_html=True
+        )
+
+    with container2:
+        col1, col2, col3 = st.columns(3)
+
+        with col1:
+            st.header("Bolsa 2026")
+            st.markdown("[Bolsas 2026](https://docs.google.com/spreadsheets/d/1VVNud1VbeZI_cLGQlPSrDVIV4F6q_YjT/edit?gid=1359273668#gid=1359273668)")
+        with col2:
+            st.header("teste")
+
+            
 def auxilio_financeiro():
     st.write("Página Auxílio Financeiro")
     container1 = st.container()
