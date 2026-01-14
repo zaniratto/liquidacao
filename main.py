@@ -2,7 +2,7 @@ import streamlit as st
 from datetime import datetime
 import streamlit.components.v1 as components
 import base64
-import openpyxl as op
+import openpyxl
 
 st.set_page_config(layout="wide")
 
