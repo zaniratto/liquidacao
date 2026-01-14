@@ -2,6 +2,8 @@ import streamlit as st
 from datetime import datetime
 import streamlit.components.v1 as components
 import base64
+import pandas as pd
+import matplotlib.pyplot as plt
 
 
 st.set_page_config(layout="wide")
@@ -55,12 +57,41 @@ components.html(
     height=80,
 )
 
-
+@st.cache_data
+def carregar_planilha(url):
+    df = pd.read_excel(url, engine="openpyxl")
+    df = df.fillna("")
+    return df
 
 def home():
- st.write("Página INICIAL")  
+    st.write("Página INICIAL")
 
+    url_xlsx = "https://docs.google.com/spreadsheets/d/e/2PACX-1vT7hOnKQMQ139aWYuFMlKrWiqi1WIyHYJgVt0P1Xy3DmNuibQXki_9d3Omqg0yV4A/pub?output=xlsx"
 
+    df = carregar_planilha(url_xlsx)
+
+    # Ocultar colunas B e D
+    df = df.drop(df.columns[[1, 3]], axis=1)
+
+    # 🔹 Criar figura
+    fig, ax = plt.subplots(
+        figsize=(len(df.columns) * 1.2, len(df) * 0.45)
+    )
+
+    ax.axis('off')
+
+    tabela = ax.table(
+        cellText=df.values,
+        colLabels=df.columns,
+        loc='center',
+        cellLoc='center'
+    )
+
+    tabela.auto_set_font_size(False)
+    tabela.set_fontsize(5)
+    tabela.scale(1.6, 1.4)
+
+    st.pyplot(fig)
 
 
 def despesas_fixas():
@@ -154,10 +185,10 @@ with st.sidebar:
     st.header("Liquidação")
     pagina = st.radio(
         "Páginas",
-        ["Home", "Despesas Fixas", "Bolsas", "Auxílio Financeiro", "Terceirizada"]
+        ["Férias", "Despesas Fixas", "Bolsas", "Auxílio Financeiro", "Terceirizada"]
     )
 
-if pagina == "Home":
+if pagina == "Férias":
     home()
 elif pagina == "Despesas Fixas":
     despesas_fixas()
