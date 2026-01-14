@@ -57,7 +57,7 @@ components.html(
     height=80,
 )
 
-@st.cache_data
+@st.cache_data(ttl=300)
 def carregar_planilha(url):
     df = pd.read_excel(url, engine="openpyxl")
     df = df.fillna("")
