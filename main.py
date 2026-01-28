@@ -175,6 +175,7 @@ def auxilio_financeiro():
         with col1:
             st.header("Auxílio Financeiro")
             st.markdown("[Auxílio Financeiro 2025](https://docs.google.com/spreadsheets/d/1f3Ba9A5kLHro4saaQiT5l3ke2l1n1zQ93tpyHGvzUqc/edit?gid=1399653021#gid=1399653021)")
+            st.markdown("[Auxílio Financeiro 2026](https://docs.google.com/spreadsheets/d/1me4X3umc1czPJbCLJBBUlWe7IAOMSzIJdf8W2W5ol2E/edit?gid=998689684#gid=998689684)")
 
 
 
