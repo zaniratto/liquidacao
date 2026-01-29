@@ -51,7 +51,7 @@ components.html(
         box-shadow: 0 2px 6px rgba(0,0,0,0.2);
     ">
         📅 {agora.strftime('%d/%m/%Y')}<br>
-        ⏰ {agora.strftime('%H:%M:%S')}
+        ⏰ {agora.strftime('%H:%M:%S')}<br>
     </div>
     """,
     height=80,
@@ -154,31 +154,60 @@ def bolsas():
             st.header("teste")
 
             
+
 def auxilio_financeiro():
-    st.write("Página Auxílio Financeiro")
+    
+
     container1 = st.container()
-    container2 = st.container()
+    
 
     with container1:
-        st.markdown(
-            """
-            <h2 style="text-align: center;">
-                Despesas Fixas
-            </h2>
-            """,
-            unsafe_allow_html=True
-        )
-
-    with container2:
+       
         col1, col2, col3 = st.columns(3)
 
         with col1:
             st.header("Auxílio Financeiro")
             st.markdown("[Auxílio Financeiro 2025](https://docs.google.com/spreadsheets/d/1f3Ba9A5kLHro4saaQiT5l3ke2l1n1zQ93tpyHGvzUqc/edit?gid=1399653021#gid=1399653021)")
             st.markdown("[Auxílio Financeiro 2026](https://docs.google.com/spreadsheets/d/1Yk_MaL9TcG8BxslwMVF10QyR3KprF0ERvQkhtdpLY6o/edit?gid=1399653021#gid=1399653021)")
+            st.markdown("### 📊 Total Auxílios 2026")
+                    
+            sheet_id = "1Yk_MaL9TcG8BxslwMVF10QyR3KprF0ERvQkhtdpLY6o"
+            gid = "998689684"
 
+            url = f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=csv&gid={gid}"
 
+            import requests
+            from io import StringIO
 
+            headers = {"User-Agent": "Mozilla/5.0"}
+            response = requests.get(url, headers=headers)
+            response.raise_for_status()
+
+            df = pd.read_csv(StringIO(response.text))
+
+            df_recorte = df.iloc[0:52, 7:10]
+
+            
+            st.divider()
+
+        df_recorte.columns.values[0] = "Semana"
+        df_recorte.columns.values[2] = "Nao Liquidadas"
+        df_recorte.columns.values[1] = "Liquidadas"
+    html_table = df_recorte.to_html(index=False)
+
+    st.markdown(
+            f"""
+            <div style="
+                width: 100%;
+                overflow-x: auto;
+                overflow-y: auto;
+                max-height: 500px;
+            ">
+                {html_table}
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
 def terceirizada():
     st.write("Página Terceirizada")
 
