@@ -165,37 +165,57 @@ def auxilio_financeiro():
        
         col1, col2, col3 = st.columns(3)
 
-        with col1:
-            st.header("Auxílio Financeiro")
-            st.markdown("[Auxílio Financeiro 2025](https://docs.google.com/spreadsheets/d/1f3Ba9A5kLHro4saaQiT5l3ke2l1n1zQ93tpyHGvzUqc/edit?gid=1399653021#gid=1399653021)")
-            st.markdown("[Auxílio Financeiro 2026](https://docs.google.com/spreadsheets/d/1Yk_MaL9TcG8BxslwMVF10QyR3KprF0ERvQkhtdpLY6o/edit?gid=1399653021#gid=1399653021)")
-            st.markdown("### 📊 Total Auxílios 2026")
-                    
-            sheet_id = "1Yk_MaL9TcG8BxslwMVF10QyR3KprF0ERvQkhtdpLY6o"
-            gid = "998689684"
+    with col1:
+        st.header("Auxílio Financeiro")
+        st.markdown("[Auxílio Financeiro 2025](https://docs.google.com/spreadsheets/d/1f3Ba9A5kLHro4saaQiT5l3ke2l1n1zQ93tpyHGvzUqc/edit?gid=1399653021#gid=1399653021)")
+        st.markdown("[Auxílio Financeiro 2026](https://docs.google.com/spreadsheets/d/1Yk_MaL9TcG8BxslwMVF10QyR3KprF0ERvQkhtdpLY6o/edit?gid=1399653021#gid=1399653021)")
+        st.markdown("### 📊 Total Auxílios 2026")
 
-            url = f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=csv&gid={gid}"
+        import pandas as pd
+        import requests
+        from io import StringIO
 
-            import requests
-            from io import StringIO
+        sheet_id = "1Yk_MaL9TcG8BxslwMVF10QyR3KprF0ERvQkhtdpLY6o"
+        gid = "998689684"
 
-            headers = {"User-Agent": "Mozilla/5.0"}
-            response = requests.get(url, headers=headers)
-            response.raise_for_status()
+        url = f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=csv&gid={gid}"
 
-            df = pd.read_csv(StringIO(response.text))
+        headers = {"User-Agent": "Mozilla/5.0"}
+        response = requests.get(url, headers=headers)
+        response.raise_for_status()
 
-            df_recorte = df.iloc[0:52, 7:10]
+        # 1️⃣ Criar DataFrame
+        df = pd.read_csv(StringIO(response.text))
 
-            
-            st.divider()
+        # 2️⃣ Recorte desejado (linhas 0 a 51, colunas 7 a 9)
+        df_recorte = df.iloc[0:52, 7:10].copy()
 
-        df_recorte.columns.values[0] = "Semana"
-        df_recorte.columns.values[2] = "Nao Liquidadas"
-        df_recorte.columns.values[1] = "Liquidadas"
-    html_table = df_recorte.to_html(index=False)
+        # 3️⃣ Converter as colunas numéricas corretamente
+        for col in df_recorte.columns[1:]:
+            df_recorte[col] = (
+                df_recorte[col]
+                .astype(str)
+                .str.replace(".", "", regex=False)   # remove separador de milhar
+                .str.replace(",", ".", regex=False)  # vírgula para ponto
+            )
+            df_recorte[col] = pd.to_numeric(
+                df_recorte[col], errors="coerce"
+            ).fillna(0)
 
-    st.markdown(
+        # 4️⃣ Remover linhas onde Liquidadas E Nao Liquidadas são 0
+        df_recorte = df_recorte.loc[
+            ~(df_recorte.iloc[:, 1:].eq(0).all(axis=1))
+        ]
+
+        # 5️⃣ Renomear colunas
+        df_recorte.columns = ["Semana", "Liquidadas", "Nao Liquidadas"]
+
+        st.divider()
+
+        # 6️⃣ Exibir tabela com scroll
+        html_table = df_recorte.to_html(index=False)
+
+        st.markdown(
             f"""
             <div style="
                 width: 100%;
@@ -208,6 +228,8 @@ def auxilio_financeiro():
             """,
             unsafe_allow_html=True
         )
+
+
 def terceirizada():
     st.write("Página Terceirizada")
 
