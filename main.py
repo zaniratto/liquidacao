@@ -188,7 +188,7 @@ def auxilio_financeiro():
         df = pd.read_csv(StringIO(response.text))
 
         # 2️⃣ Recorte desejado (linhas 0 a 51, colunas 7 a 9)
-        df_recorte = df.iloc[0:52, 7:10].copy()
+        df_recorte = df.iloc[0:53, 7:10].copy()
 
         # 3️⃣ Converter as colunas numéricas corretamente
         for col in df_recorte.columns[1:]:
