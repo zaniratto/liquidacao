@@ -169,78 +169,78 @@ def bolsas():
             
 
 def auxilio_financeiro():
-    
 
-    container1 = st.container()
-    
+    import pandas as pd
+    import requests
+    from io import StringIO
+    import streamlit as st
 
-    with container1:
-       
-        col1, col2, col3 = st.columns(3)
+    sheet_id = "1Yk_MaL9TcG8BxslwMVF10QyR3KprF0ERvQkhtdpLY6o"
+    gid = "998689684"
 
-    with col1:
-        st.header("Auxílio Financeiro")
-        st.markdown("[Auxílio Financeiro 2025](https://docs.google.com/spreadsheets/d/1f3Ba9A5kLHro4saaQiT5l3ke2l1n1zQ93tpyHGvzUqc/edit?gid=1399653021#gid=1399653021)")
-        st.markdown("[Auxílio Financeiro 2026](https://docs.google.com/spreadsheets/d/1Yk_MaL9TcG8BxslwMVF10QyR3KprF0ERvQkhtdpLY6o/edit?gid=1399653021#gid=1399653021)")
-        st.markdown("### 📊 Total Auxílios 2026")
+    url = f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=csv&gid={gid}"
 
-        import pandas as pd
-        import requests
-        from io import StringIO
+    headers = {"User-Agent": "Mozilla/5.0"}
+    response = requests.get(url, headers=headers)
+    response.raise_for_status()
 
-        sheet_id = "1Yk_MaL9TcG8BxslwMVF10QyR3KprF0ERvQkhtdpLY6o"
-        gid = "998689684"
+    # 1️⃣ Criar DataFrame
+    df = pd.read_csv(StringIO(response.text))
 
-        url = f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=csv&gid={gid}"
+    # 🔐 Verificação de segurança
+    if not df.empty and df.shape[1] > 5:
+        valor = int(df.iloc[0, 10])
+    else:
+        valor = "Sem informação"
 
-        headers = {"User-Agent": "Mozilla/5.0"}
-        response = requests.get(url, headers=headers)
-        response.raise_for_status()
+    st.header("Auxílio Financeiro")
+    st.header(f"Semana - {valor}")
 
-        # 1️⃣ Criar DataFrame
-        df = pd.read_csv(StringIO(response.text))
+    st.markdown("[Auxílio Financeiro 2025](https://docs.google.com/spreadsheets/d/1f3Ba9A5kLHro4saaQiT5l3ke2l1n1zQ93tpyHGvzUqc/edit?gid=1399653021#gid=1399653021)")
+    st.markdown("[Auxílio Financeiro 2026](https://docs.google.com/spreadsheets/d/1Yk_MaL9TcG8BxslwMVF10QyR3KprF0ERvQkhtdpLY6o/edit?gid=1399653021#gid=1399653021)")
+    st.markdown("### 📊 Total Auxílios 2026")
 
-        # 2️⃣ Recorte desejado (linhas 0 a 51, colunas 7 a 9)
-        df_recorte = df.iloc[0:53, 7:10].copy()
+    # 2️⃣ Recorte desejado
+    df_recorte = df.iloc[0:53, 7:10].copy()
 
-        # 3️⃣ Converter as colunas numéricas corretamente
-        for col in df_recorte.columns[1:]:
-            df_recorte[col] = (
-                df_recorte[col]
-                .astype(str)
-                .str.replace(".", "", regex=False)   # remove separador de milhar
-                .str.replace(",", ".", regex=False)  # vírgula para ponto
-            )
-            df_recorte[col] = pd.to_numeric(
-                df_recorte[col], errors="coerce"
-            ).fillna(0)
-
-        # 4️⃣ Remover linhas onde Liquidadas E Nao Liquidadas são 0
-        df_recorte = df_recorte.loc[
-            ~(df_recorte.iloc[:, 1:].eq(0).all(axis=1))
-        ]
-
-        # 5️⃣ Renomear colunas
-        df_recorte.columns = ["Semana", "Liquidadas", "Nao Liquidadas"]
-
-        st.divider()
-
-        # 6️⃣ Exibir tabela com scroll
-        html_table = df_recorte.to_html(index=False)
-
-        st.markdown(
-            f"""
-            <div style="
-                width: 100%;
-                overflow-x: auto;
-                overflow-y: auto;
-                max-height: 500px;
-            ">
-                {html_table}
-            </div>
-            """,
-            unsafe_allow_html=True
+    # 3️⃣ Converter colunas numéricas
+    for col in df_recorte.columns[1:]:
+        df_recorte[col] = (
+            df_recorte[col]
+            .astype(str)
+            .str.replace(".", "", regex=False)
+            .str.replace(",", ".", regex=False)
         )
+        df_recorte[col] = pd.to_numeric(
+            df_recorte[col], errors="coerce"
+        ).fillna(0)
+
+    # 4️⃣ Remover linhas zeradas
+    df_recorte = df_recorte.loc[
+        ~(df_recorte.iloc[:, 1:].eq(0).all(axis=1))
+    ]
+
+    # 5️⃣ Renomear colunas
+    df_recorte.columns = ["Semana", "Liquidadas", "Nao Liquidadas"]
+
+    st.divider()
+
+    # 6️⃣ Exibir tabela
+    html_table = df_recorte.to_html(index=False)
+
+    st.markdown(
+        f"""
+        <div style="
+            width: 100%;
+            overflow-x: auto;
+            overflow-y: auto;
+            max-height: 500px;
+        ">
+            {html_table}
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
 
 
 def terceirizada():
