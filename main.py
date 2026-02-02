@@ -9,6 +9,9 @@ import matplotlib.pyplot as plt
 st.set_page_config(layout="wide")
 
 #Configuração da página de fundo
+import streamlit as st
+import base64
+
 def get_base64(file_path):
     with open(file_path, "rb") as f:
         return base64.b64encode(f.read()).decode()
@@ -18,17 +21,27 @@ img_base64 = get_base64("img/brasao.png")
 st.markdown(
     f"""
     <style>
-    .stApp {{
-        background-image: url("data:image/png;base64,{img_base64}");
-        background-size: 120px;
-        background-repeat: no-repeat;
-        background-position: 300px 60px;
-        background-attachment: fixed;
+    .brasao-container {{
+        position: absolute;
+        top: 5px;
+        left: 40%;
+        transform: translateX(-40%);
+        z-index: 1000;
+        opacity: 0.18;  /* efeito marca d'água */
+    }}
+
+    .brasao-container img {{
+        width: 180px;
     }}
     </style>
+
+    <div class="brasao-container">
+        <img src="data:image/png;base64,{img_base64}">
+    </div>
     """,
     unsafe_allow_html=True
 )
+
 
 
 #Configuração do relógio e da data
