@@ -133,8 +133,8 @@ def despesas_fixas():
             st.markdown("[CEMIG CT 11](https://docs.google.com/spreadsheets/d/1hh6GUnJdYpjzsDVkNrZs-_HKjsBPFTK5ODC_mwZjoAA/edit?gid=1679924932#gid=1679924932)")
             st.markdown("[CEMIG CT 24](https://docs.google.com/spreadsheets/d/1rAMzJJkJWZdF_9iBjtcDQho3yNKiAGb1AeFCTY0eHSE/edit?gid=1679924932#gid=1679924932)")
             st.markdown("[CEMIG CT 25](https://docs.google.com/spreadsheets/d/1r5oSM5oVd7j7lFu916P1Ux_N4O60DFJDxPHtyGbeBgo/edit?gid=1679924932#gid=1679924932)")
-            st.markdown("[CEMIG CT 28](https://docs.google.com/spreadsheets/d/1TzUOIu0z2NxxXjnxtMeg_6wgsgSZpEhdaTMs9otFteU/edit?gid=1679924932#gid=1679924932)")
-            st.markdown("[CEMIG CT 72](https://docs.google.com/spreadsheets/d/15xK_kv48jO0RkcMpHBEhbZ_OW4pOtxfwEfmDuODcOSM/edit?gid=0#gid=0)")
+            st.markdown("[CEMIG CT 28](https://docs.google.com/spreadsheets/d/1NKAWl0Q8r3qpLLHoXnIyU4DlZpRzy4Onb-Bb8JnNUog/edit?gid=1679924932#gid=1679924932)")
+            st.markdown("[CEMIG CT 72](https://docs.google.com/spreadsheets/d/1Kc3fsblLwTQvvGXbAvJTuE8KFMtBUxuNIDf2XqitbOg/edit?gid=1679924932#gid=1679924932)")
 
         with col2:
             st.header("Água")
