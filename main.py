@@ -122,14 +122,14 @@ def despesas_fixas():
         )
 
     with container2:
-        col1, col2, col3 = st.columns(3)
+        col1, col2, col3, col4 = st.columns(4)
 
         with col1:
             st.header("Luz")
             
             st.markdown("[CEMIG CT 08 ENC](https://docs.google.com/spreadsheets/d/1JH1OxEp3T8Iyb4YNGsfJ_EZ9D1Fd5QsLNO1Dt4R2HXs/edit?gid=1679924932#gid=1679924932)")
-            st.markdown("[CEMIG CT 10](https://docs.google.com/spreadsheets/d/1WCyBOnzs532MNCnIOEfFifMR-yFb0JAdXB9hNabXFQs/edit?gid=1679924932#gid=1679924932)")
-            st.markdown("[CEMIG CT 16 ENC](https://docs.google.com/spreadsheets/d/1tWKLNTCRgfK4PlTZ0TlF-BSog14rsJiSBWemNVIbWb4/edit?gid=1679924932#gid=1679924932)")
+            st.markdown("[CEMIG CT 10 ENC](https://docs.google.com/spreadsheets/d/1WCyBOnzs532MNCnIOEfFifMR-yFb0JAdXB9hNabXFQs/edit?gid=1679924932#gid=1679924932)")
+            st.markdown("[CEMIG CT 16](https://docs.google.com/spreadsheets/d/1tWKLNTCRgfK4PlTZ0TlF-BSog14rsJiSBWemNVIbWb4/edit?gid=1679924932#gid=1679924932)")
             st.markdown("[CEMIG CT 17](https://docs.google.com/spreadsheets/d/14V-it5G4X3FSZBqW2FefX-5bMh2Hk-NeV4X4lP7749g/edit?gid=1679924932#gid=1679924932)")
             st.markdown("[CEMIG CT 18](https://docs.google.com/spreadsheets/d/13CjNabpZ_Yc7Z_sF_4jQWscitHhL2ZBzrHaNBkgYSkI/edit?gid=1679924932#gid=1679924932)")
             st.markdown("[CEMIG CT 25](https://docs.google.com/spreadsheets/d/1_6vUdF4D4txhOMSbC7SxIuR8aXXw3G9I2bbmFflMgeU/edit?gid=1679924932#gid=1679924932)")
@@ -147,6 +147,13 @@ def despesas_fixas():
             st.header("Comunicação")
 
             st.markdown("[TELEFÔNICA IP DEDICADO](https://docs.google.com/spreadsheets/d/1tSnZLRSzYlXtD7ZyDLk6Bq3FfpxuFSEPcS049ZBPQQQ/edit?gid=1679924932#gid=1679924932)")
+
+        with col3:
+        st.header("Controle")
+
+        st.markdown("[Despesas Fixas 2025 (Júlia) ](https://docs.google.com/spreadsheets/d/1PYBKlySsaq-hCf37yBlhO8EadyLB0mCV/edit?gid=1600794849#gid=1600794849)")
+        st.markdown("[Despesas Fixas 2026 (Júlia) ](https://docs.google.com/spreadsheets/d/1rhVwj0ZN3wOPn0riv8xE-Etdru7OP7Ak/edit?gid=1600794849#gid=1600794849)")
+
 
 def bolsas():
     st.write("Página Bolsas")
