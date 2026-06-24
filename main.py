@@ -131,8 +131,8 @@ def despesas_fixas():
             st.markdown("[CEMIG CT 09](https://docs.google.com/spreadsheets/d/1y9lA70R-aVHW4yiQoMiSlND1jTVF0Bk2I8veRuRsVoA/edit?gid=1679924932#gid=1679924932)")
             st.markdown("[CEMIG CT 10](https://docs.google.com/spreadsheets/d/1WCyBOnzs532MNCnIOEfFifMR-yFb0JAdXB9hNabXFQs/edit?gid=1679924932#gid=1679924932)")
             st.markdown("[CEMIG CT 11](https://docs.google.com/spreadsheets/d/1hh6GUnJdYpjzsDVkNrZs-_HKjsBPFTK5ODC_mwZjoAA/edit?gid=1679924932#gid=1679924932)")
-            st.markdown("[CEMIG CT 24](https://docs.google.com/spreadsheets/d/1rAMzJJkJWZdF_9iBjtcDQho3yNKiAGb1AeFCTY0eHSE/edit?gid=1679924932#gid=1679924932)")
-            st.markdown("[CEMIG CT 25](https://docs.google.com/spreadsheets/d/1r5oSM5oVd7j7lFu916P1Ux_N4O60DFJDxPHtyGbeBgo/edit?gid=1679924932#gid=1679924932)")
+            st.markdown("[CEMIG CT 25](https://docs.google.com/spreadsheets/d/1_6vUdF4D4txhOMSbC7SxIuR8aXXw3G9I2bbmFflMgeU/edit?gid=1679924932#gid=1679924932)")
+            st.markdown("[CEMIG CT 26](https://docs.google.com/spreadsheets/d/1_UqdvCKzJt_kWtDqIB-NkahUkLabqpjjWdYPcFZn39k/edit?gid=1679924932#gid=1679924932)")
             st.markdown("[CEMIG CT 28](https://docs.google.com/spreadsheets/d/1NKAWl0Q8r3qpLLHoXnIyU4DlZpRzy4Onb-Bb8JnNUog/edit?gid=1679924932#gid=1679924932)")
             st.markdown("[CEMIG CT 72](https://docs.google.com/spreadsheets/d/1Kc3fsblLwTQvvGXbAvJTuE8KFMtBUxuNIDf2XqitbOg/edit?gid=1679924932#gid=1679924932)")
 
