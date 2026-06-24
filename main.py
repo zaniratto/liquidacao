@@ -126,11 +126,12 @@ def despesas_fixas():
 
         with col1:
             st.header("Luz")
-            st.markdown("[CEMIG CT 07](https://docs.google.com/spreadsheets/d/1j8Th4LU8hGf3zhOsD7LQOb1ZRPqiV-pq_77Zne3aJg4/edit?gid=1679924932#gid=1679924932)")
-            st.markdown("[CEMIG CT 08](https://docs.google.com/spreadsheets/d/1JH1OxEp3T8Iyb4YNGsfJ_EZ9D1Fd5QsLNO1Dt4R2HXs/edit?gid=1679924932#gid=1679924932)")
-            st.markdown("[CEMIG CT 09](https://docs.google.com/spreadsheets/d/1y9lA70R-aVHW4yiQoMiSlND1jTVF0Bk2I8veRuRsVoA/edit?gid=1679924932#gid=1679924932)")
+            
+            st.markdown("[CEMIG CT 08 ENC](https://docs.google.com/spreadsheets/d/1JH1OxEp3T8Iyb4YNGsfJ_EZ9D1Fd5QsLNO1Dt4R2HXs/edit?gid=1679924932#gid=1679924932)")
             st.markdown("[CEMIG CT 10](https://docs.google.com/spreadsheets/d/1WCyBOnzs532MNCnIOEfFifMR-yFb0JAdXB9hNabXFQs/edit?gid=1679924932#gid=1679924932)")
-            st.markdown("[CEMIG CT 11](https://docs.google.com/spreadsheets/d/1hh6GUnJdYpjzsDVkNrZs-_HKjsBPFTK5ODC_mwZjoAA/edit?gid=1679924932#gid=1679924932)")
+            st.markdown("[CEMIG CT 16 ENC](https://docs.google.com/spreadsheets/d/1tWKLNTCRgfK4PlTZ0TlF-BSog14rsJiSBWemNVIbWb4/edit?gid=1679924932#gid=1679924932)")
+            st.markdown("[CEMIG CT 17](https://docs.google.com/spreadsheets/d/14V-it5G4X3FSZBqW2FefX-5bMh2Hk-NeV4X4lP7749g/edit?gid=1679924932#gid=1679924932)")
+            st.markdown("[CEMIG CT 18](https://docs.google.com/spreadsheets/d/13CjNabpZ_Yc7Z_sF_4jQWscitHhL2ZBzrHaNBkgYSkI/edit?gid=1679924932#gid=1679924932)")
             st.markdown("[CEMIG CT 25](https://docs.google.com/spreadsheets/d/1_6vUdF4D4txhOMSbC7SxIuR8aXXw3G9I2bbmFflMgeU/edit?gid=1679924932#gid=1679924932)")
             st.markdown("[CEMIG CT 26](https://docs.google.com/spreadsheets/d/1_UqdvCKzJt_kWtDqIB-NkahUkLabqpjjWdYPcFZn39k/edit?gid=1679924932#gid=1679924932)")
             st.markdown("[CEMIG CT 28](https://docs.google.com/spreadsheets/d/1NKAWl0Q8r3qpLLHoXnIyU4DlZpRzy4Onb-Bb8JnNUog/edit?gid=1679924932#gid=1679924932)")
@@ -139,8 +140,13 @@ def despesas_fixas():
         with col2:
             st.header("Água")
 
+            st.markdown("[AGUAS VALADARES](https://docs.google.com/spreadsheets/d/1eExXFZXBJ0TaHNX1Z880sPd89rY86spcd7BHSMY2nGA/edit?gid=1679924932#gid=1679924932)")
+            st.markdown("[CESAMA - CT 0080/2024](https://docs.google.com/spreadsheets/d/1DWFfkx10Uqo483kvHGGHv3iAbiFTsZvVG1fMI5FOFNA/edit?gid=1679924932#gid=1679924932)")
+
         with col3:
             st.header("Comunicação")
+
+            st.markdown("[TELEFÔNICA IP DEDICADO](https://docs.google.com/spreadsheets/d/1tSnZLRSzYlXtD7ZyDLk6Bq3FfpxuFSEPcS049ZBPQQQ/edit?gid=1679924932#gid=1679924932)")
 
 def bolsas():
     st.write("Página Bolsas")
