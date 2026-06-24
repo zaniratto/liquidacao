@@ -148,11 +148,11 @@ def despesas_fixas():
 
             st.markdown("[TELEFÔNICA IP DEDICADO](https://docs.google.com/spreadsheets/d/1tSnZLRSzYlXtD7ZyDLk6Bq3FfpxuFSEPcS049ZBPQQQ/edit?gid=1679924932#gid=1679924932)")
 
-        with col3:
-        st.header("Controle")
+        with col4:
+            st.header("Controle")
 
-        st.markdown("[Despesas Fixas 2025 (Júlia) ](https://docs.google.com/spreadsheets/d/1PYBKlySsaq-hCf37yBlhO8EadyLB0mCV/edit?gid=1600794849#gid=1600794849)")
-        st.markdown("[Despesas Fixas 2026 (Júlia) ](https://docs.google.com/spreadsheets/d/1rhVwj0ZN3wOPn0riv8xE-Etdru7OP7Ak/edit?gid=1600794849#gid=1600794849)")
+            st.markdown("[Despesas Fixas 2025 (Júlia) ](https://docs.google.com/spreadsheets/d/1PYBKlySsaq-hCf37yBlhO8EadyLB0mCV/edit?gid=1600794849#gid=1600794849)")
+            st.markdown("[Despesas Fixas 2026 (Júlia) ](https://docs.google.com/spreadsheets/d/1rhVwj0ZN3wOPn0riv8xE-Etdru7OP7Ak/edit?gid=1600794849#gid=1600794849)")
 
 
 def bolsas():
