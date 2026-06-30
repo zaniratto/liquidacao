@@ -258,6 +258,29 @@ def auxilio_financeiro():
 
 def terceirizada():
     st.write("Página Terceirizada")
+    container1 = st.container()
+    container2 = st.container()
+
+    with container1:
+        st.markdown(
+            """
+            <h2 style="text-align: center;">
+                Despesas Fixas
+            </h2>
+            """,
+            unsafe_allow_html=True
+        )
+
+    with container2:
+        col1, col2 = st.columns(2)
+
+        with col1:
+            st.header("Contratos")
+            
+            st.markdown("[CAPE CT 0062/2024](https://docs.google.com/spreadsheets/d/1drlAOwrNpbOguU8lQ1PhGL6biM0E1bpfCf9vZGvpFN8/edit?gid=137990838#gid=137990838)")
+            
+            with col2:
+                st.header("Em desenvolvimento")
 
 with st.sidebar:
     st.header("Liquidação")
