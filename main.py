@@ -135,6 +135,8 @@ def despesas_fixas():
             st.markdown("[CEMIG CT 25](https://docs.google.com/spreadsheets/d/1_6vUdF4D4txhOMSbC7SxIuR8aXXw3G9I2bbmFflMgeU/edit?gid=1679924932#gid=1679924932)")
             st.markdown("[CEMIG CT 26](https://docs.google.com/spreadsheets/d/1_UqdvCKzJt_kWtDqIB-NkahUkLabqpjjWdYPcFZn39k/edit?gid=1679924932#gid=1679924932)")
             st.markdown("[CEMIG CT 28](https://docs.google.com/spreadsheets/d/1NKAWl0Q8r3qpLLHoXnIyU4DlZpRzy4Onb-Bb8JnNUog/edit?gid=1679924932#gid=1679924932)")
+            st.markdown("[CEMIG CT 37](https://docs.google.com/spreadsheets/d/1XQQdAeCF_C9b0qvWuZLZS2-vEWXMv3gQYrK9xa2ccxs/edit?gid=1679924932#gid=1679924932)")
+            st.markdown("[CEMIG CT 38](https://docs.google.com/spreadsheets/d/1GC5wX1ty77hbfse_7oIpUxgZ-XTVIxaLsCJXMYHKroY/edit?gid=1679924932#gid=1679924932)")
             st.markdown("[CEMIG CT 72](https://docs.google.com/spreadsheets/d/1Kc3fsblLwTQvvGXbAvJTuE8KFMtBUxuNIDf2XqitbOg/edit?gid=1679924932#gid=1679924932)")
 
         with col2:
