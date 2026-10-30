@@ -223,8 +223,8 @@ def auxilio_financeiro():
     
     # 3️⃣ Converter colunas numéricas corretamente
     # Não remover pontos, pois isso transforma 11.0 em 110
-   for col in df_recorte.columns[1:]:
-    df_recorte[col] = pd.to_numeric(
+    for col in df_recorte.columns[1:]:
+        df_recorte[col] = pd.to_numeric(
         df_recorte[col], errors="coerce"
     ).fillna(0).astype(int)
 
