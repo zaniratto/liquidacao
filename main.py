@@ -202,9 +202,7 @@ def auxilio_financeiro():
     # 1️⃣ Criar DataFrame
     df = pd.read_csv(StringIO(response.text))
 
-    st.write("1 - Dados recebidos do Google Sheets:")
-    st.write(df.iloc[1:10, 7:10])
-
+    
     # 🔐 Verificação de segurança
     if not df.empty and df.shape[1] > 5:
         valor = int(df.iloc[0, 10])
@@ -222,15 +220,13 @@ def auxilio_financeiro():
     # Ignorar a primeira linha, que contém os cabeçalhos
     df_recorte = df.iloc[1:53, 7:10].copy()
 
-    st.write("2 - Dados após o recorte:")
-    st.write(df_recorte.head(10))
-
+    
     # 3️⃣ Converter colunas numéricas corretamente
     # Não remover pontos, pois isso transforma 11.0 em 110
-    for col in df_recorte.columns[1:]:
-        df_recorte[col] = pd.to_numeric(
-            df_recorte[col], errors="coerce"
-        ).fillna(0)
+   for col in df_recorte.columns[1:]:
+    df_recorte[col] = pd.to_numeric(
+        df_recorte[col], errors="coerce"
+    ).fillna(0).astype(int)
 
     # 4️⃣ Remover linhas em que os dois valores são zero
     df_recorte = df_recorte.loc[
