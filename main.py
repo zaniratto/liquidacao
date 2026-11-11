@@ -284,7 +284,7 @@ def terceirizada():
             st.markdown("[CAPE CT 0062/2024](https://docs.google.com/spreadsheets/d/1drlAOwrNpbOguU8lQ1PhGL6biM0E1bpfCf9vZGvpFN8/edit?gid=137990838#gid=137990838)")
             st.markdown("[TEKNO CT 0040/2021](https://docs.google.com/spreadsheets/d/1f_uzs0hx8Izada1--Oohy4uqZx3AW3D6MRKuBnLhpYk/edit?gid=137990838#gid=137990838)")
             st.markdown("[STARK CT 0044/2025](https://docs.google.com/spreadsheets/d/1k1qzf8UjPqwbeTxUeDZf_GzMQ9J0u7N__d4Yr1VijgA/edit?gid=389680711#gid=389680711)")
-            st.markdown("[ADSERVI CT 0035/2023](https://https://docs.google.com/spreadsheets/d/1KXt4OBHBowMXYOg3GCw2m0wlbIK2y-dmBtPypTnBcik/edit?gid=137990838#gid=137990838)")
+            st.markdown("[ADSERVI CT 0035/2023](https://docs.google.com/spreadsheets/d/1KXt4OBHBowMXYOg3GCw2m0wlbIK2y-dmBtPypTnBcik/edit?gid=137990838#gid=137990838)")
             
             with col2:
                 st.header("Contratos")
